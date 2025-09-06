@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Open in Desert Maps</title>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; display:flex; align-items:center; justify-content:center; height:100vh; margin:0; }
+    .box { text-align:center; max-width:520px; padding:1rem; }
+    a { color: #0b66ff; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Opening Desert Maps…</h2>
+    <p id="msg">If nothing happens, <a id="manual" href="#">tap here</a> to open manually or install the app.</p>
+  </div>
+
+  <script>
+    (function() {
+      // CONFIG — change if you update your fallback landing
+      var INSTALL_URL = "https://onelink.to/r5jm3e"; // fallback install page
+
+      // Extract token from path, query, or hash
+	var originalUrl = window.location.href;
+	var tokenMatch = originalUrl.match(/github\.io\/(?!404\.html)(.+)$/);
+	var token = tokenMatch ? tokenMatch[1].replace(/^\/+/, "") : "";
+
+      // If no token is provided, show a message
+      if (!token) {
+        document.getElementById("msg").textContent =
+          "This site converts links to Desert Maps deep links. Append your code to the URL";
+        return;
+      }
+
+      // Build deep link
+      var deepLink = "om://" + token;
+
+      // Update manual link
+      var manualEl = document.getElementById("manual");
+      manualEl.href = deepLink;
+      manualEl.setAttribute("target", "_self");
+
+      // Detect platform
+      var ua = navigator.userAgent || "";
+      var isIos = /iP(hone|od|ad)/i.test(ua) || (navigator.platform && /Mac/.test(navigator.platform) && 'ontouchend' in document);
+
+      // Try to open app
+      function tryOpen() {
+        location.href = deepLink;
+        // fallback if app is not installed
+        setTimeout(function() {
+          location.href = INSTALL_URL;
+        }, isIos ? 1000 : 1200);
+      }
+
+      tryOpen();
+    })();
+  </script>
+</body>
+</html>
