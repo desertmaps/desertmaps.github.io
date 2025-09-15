@@ -15,6 +15,7 @@
       "namespace": "android_app",
       "package_name": "desert.maps.navigator.web",
       "sha256_cert_fingerprints": [
+          "BE:47:A2:A1:11:FB:94:2E:C5:47:14:AB:68:A4:FD:D6:70:47:30:2F:5C:52:B8:06:D1:CB:2C:5F:FB:01:2A:A6",
 	      "96:D6:28:81:78:B0:1B:86:9B:D3:FF:BF:95:B3:3B:EE:DE:23:01:68:DF:88:2A:1D:7A:4B:B2:8B:85:34:59:F4"
       ]
     }
