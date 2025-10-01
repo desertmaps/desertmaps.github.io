@@ -19,5 +19,14 @@
 	      "96:D6:28:81:78:B0:1B:86:9B:D3:FF:BF:95:B3:3B:EE:DE:23:01:68:DF:88:2A:1D:7A:4B:B2:8B:85:34:59:F4"
       ]
     }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "desert.maps.saudi",
+      "sha256_cert_fingerprints":
+        ["E3:E7:BF:94:CB:C1:75:32:7B:99:9A:D7:2D:93:25:6C:59:2E:13:BB:05:14:8A:16:D1:6B:55:BA:47:D6:BC:A4"]
+    }
   }
 ]
