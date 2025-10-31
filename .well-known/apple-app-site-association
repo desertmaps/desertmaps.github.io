@@ -1,0 +1,10 @@
+{
+  "applinks": {
+    "details" : [
+      {
+        "appID": "6741031623.desert.maps.navigator.gps",
+        "paths": ["*", "/"]
+      }
+    ]
+  }
+}
